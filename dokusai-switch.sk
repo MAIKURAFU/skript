@@ -1,0 +1,12 @@
+command /switch
+    trigger:
+    open chestwith 3 row named "独裁スイッチ" to player
+    set slot  0of player's current inventory to apple named "全員をキルする。"
+
+on inventory click:
+    if name of current inventory contain "switch"
+        cancel event
+
+        if clicked slot is 0:
+        kill @a
+        send "全員をキルしました。"
